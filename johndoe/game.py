@@ -20,9 +20,9 @@ SHADOW_COLOR = (200, 200, 200)
 
 # Business class
 class Business:
-    def __init__(self, name, base_cost, base_income):
+    def __init__(self, name, base_cost, base_income, level=0):
         self.name = name
-        self.level = 0  # Start at level 0 to indicate not upgraded
+        self.level = level  # Start with a given level
         self.base_cost = base_cost
         self.base_income = base_income
         self.upgrade_cost = self.calculate_upgrade_cost()
@@ -49,14 +49,14 @@ event_duration = 0
 bonus_active = False
 bonus_duration = 0
 
-# Adjusted initial businesses
+# Initialize businesses, Coffee Shop starts at level 1
 businesses = [
-    Business("Coffee Shop", 50, 2),     # Generates income from the start
-    Business("Bakery", 100, 1),          # No income until upgraded
-    Business("Restaurant", 200, 5),      # No income until upgraded
-    Business("Clothing Store", 150, 2),  # No income until upgraded
-    Business("Tech Startup", 500, 10),   # No income until upgraded
-    Business("Real Estate", 1000, 20)     # No income until upgraded
+    Business("Coffee Shop", 50, 2, level=1),  # Coffee Shop starts at level 1
+    Business("Bakery", 100, 1),                # No income until upgraded
+    Business("Restaurant", 200, 5),            # No income until upgraded
+    Business("Clothing Store", 150, 2),        # No income until upgraded
+    Business("Tech Startup", 500, 10),         # No income until upgraded
+    Business("Real Estate", 1000, 20)          # No income until upgraded
 ]
 
 # Achievements tracking
