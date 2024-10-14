@@ -1,0 +1,2 @@
+def koszontes():
+    print("turan")
